@@ -9,6 +9,9 @@ while True:
     user_action = input("Enter a choice(rock, paper, scissors): ")
     user_action = user_action.lower()
     possible_actions = ["rock", "paper", "scissors"]
+    if user_action not in possible_actions:
+        print("Invalid input. Please enter one of the following: rock, paper, scissors")
+        continue
     computer_action = random.choice(possible_actions)
     print(f'\nYou chose {user_action}; the computer chose {computer_action}.\n')
 
@@ -39,8 +42,6 @@ while True:
             print("Rock smashes scissors! You lose.")
             defeats += 1
         print(f"\nRecord: {player_name} - {victories}, computer - {defeats}\n")
-    else:
-        print("Invalid input. Please enter one of the following: rock, paper, scissors")
     play_again = input("Play again? (y/n): ")
     if play_again.lower() != "y":
         print(f"Thanks for playing, {player_name}!")
